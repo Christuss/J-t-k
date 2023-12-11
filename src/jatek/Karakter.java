@@ -4,6 +4,7 @@
  */
 package jatek;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -12,6 +13,7 @@ import java.util.Random;
  */
 public class Karakter {
     int eletero, ugyesseg, szerencse;
+    ArrayList<String> felszereles;
     Random rnd = new Random();
 
     public Karakter() {
@@ -26,8 +28,10 @@ public class Karakter {
 
     @Override
     public String toString() {
-        return "Karakter{" + "eletero=" + eletero + ", ugyesseg=" + ugyesseg + ", szerencse=" + szerencse + '}';
+        return "Karakter{" + "eletero=" + eletero + ", ugyesseg=" + ugyesseg + ", szerencse=" + szerencse + ", felszereles=" + felszereles + '}';
     }
+
+    
     
     
 }
