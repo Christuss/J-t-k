@@ -17,6 +17,7 @@ public class Karakter {
     Random rnd = new Random();
 
     public Karakter() {
+        felszereles = new ArrayList<Targy>();
         this.eletero = 2*d6() +12;
         this.ugyesseg = d6() +6;
         this.szerencse = d6()+6;
@@ -32,6 +33,40 @@ public class Karakter {
     void felvesz(Targy targy, int darab) {
         for (int i = 0; i < darab; i++) {
             felszereles.add(targy);
+        }
+    }
+    
+    public void hasznal(String nev, int mennyit){
+        this.hasznal(nev, mennyit, true);
+    }
+    
+    public void hasznal(String nev){
+        this.hasznal(nev, 1);
+    }
+    
+    public void hasznal(String nev, int mennyit, boolean kevesebbelis){
+        int osszes = 0;
+        for (int i = 0; i < felszereles.size() && osszes<mennyit; i++) {
+            if (felszereles.get(i).getNev().equals(nev)) {
+                osszes++;
+            }
+        }
+        if (osszes > 0) {
+            if (kevesebbelis || osszes >= mennyit) {
+                int i = felszereles.size()-1;
+                int levon = mennyit;
+                while(i >= 0 && levon != 0){
+                    if(felszereles.get(i).getNev().equals(nev)){
+                        felszereles.remove(i);
+                        levon--;
+                    }
+                    i--;
+                }
+            } else {
+                System.out.println("Nincs eleg!");
+            }
+        } else {
+            System.out.println("Nincsen.");
         }
     }
 
