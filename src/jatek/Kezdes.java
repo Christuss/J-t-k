@@ -14,5 +14,10 @@ public class Kezdes extends Helyszin{
     public String leiras() {
         return "Ez a kezdés";
     }
+    
+    @Override
+    public Helyszin egyikIrany() {
+        return new Start();
+    }
 
 }

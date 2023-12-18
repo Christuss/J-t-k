@@ -3,10 +3,11 @@ package jatek;
 
 public class MainForm extends javax.swing.JFrame {
 
+    Helyszin helyszin;
     public MainForm() {
         initComponents();
-        Helyszin h = new Start();
-        jTextArea1.setText(h.leiras());
+        helyszin = new Start();
+        jTextArea1.setText(helyszin.leiras());
     }
 
     @SuppressWarnings("unchecked")
@@ -75,8 +76,8 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Helyszin h = new Kezdes();
-        jTextArea1.setText(h.leiras());
+        helyszin = helyszin.egyikIrany();
+        jTextArea1.setText(helyszin.leiras());
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
