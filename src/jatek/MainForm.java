@@ -8,6 +8,8 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         helyszin = new Start();
         jTextArea1.setText(helyszin.leiras());
+        jButton1.setVisible(false);
+        jButton2.setText("Tovább...");
     }
 
     @SuppressWarnings("unchecked")
@@ -27,14 +29,14 @@ public class MainForm extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("masik irany");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("egyik irany");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -76,8 +78,11 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jButton1.setVisible(true);
         helyszin = helyszin.egyikIrany();
-        jTextArea1.setText(helyszin.leiras());
+        jButton2.setText(helyszin.egyikBtnFelirat());
+        jTextArea1.insert(helyszin.leiras() + "\n", 0);
+        jTextArea1.setCaretPosition(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

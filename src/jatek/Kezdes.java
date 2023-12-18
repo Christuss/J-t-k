@@ -17,7 +17,12 @@ public class Kezdes extends Helyszin{
     
     @Override
     public Helyszin egyikIrany() {
-        return new Start();
+        return new Bal();
+    }
+
+    @Override
+    public String egyikBtnFelirat() {
+        return "menj balra";
     }
 
 }
