@@ -74,19 +74,24 @@ public class MainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        valtoztat(((MasikIrany)helyszin).masikIrany());
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        helyszin = helyszin.egyikIrany();
+    private void valtoztat(Helyszin irany) {
+        helyszin = irany;
         if (helyszin instanceof MasikIrany) {
             jButton1.setVisible(true);
+            jButton1.setText(((MasikIrany)helyszin).masikBtnFelirat());
         } else {
             jButton1.setVisible(false);
         }
         jButton2.setText(helyszin.egyikBtnFelirat());
         jTextArea1.insert(helyszin.leiras() + "\n", 0);
         jTextArea1.setCaretPosition(0);
+    }
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        valtoztat(helyszin.egyikIrany());
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

@@ -8,6 +8,21 @@ package jatek;
  *
  * @author szendefi.k.daniel
  */
-public class Eszak {
+public class Eszak extends Helyszin{
+
+    @Override
+    public String leiras() {
+        return "észak";
+    }
+
+    @Override
+    public Helyszin egyikIrany() {
+        return new Eszak();
+    }
+
+    @Override
+    public String egyikBtnFelirat() {
+        return "button";
+    }
     
 }

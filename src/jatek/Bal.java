@@ -1,11 +1,11 @@
 
 package jatek;
 
-public class Bal extends Helyszin{
+public class Bal extends Helyszin implements MasikIrany{
 
     @Override
     public Helyszin egyikIrany() {
-        return new Del();
+        return new Kelet();
     }
 
     @Override
@@ -15,7 +15,17 @@ public class Bal extends Helyszin{
 
     @Override
     public String egyikBtnFelirat() {
-        return "Délre";
+        return "Keletre";
+    }
+
+    @Override
+    public Helyszin masikIrany() {
+        return new Nyugat();
+    }
+
+    @Override
+    public String masikBtnFelirat() {
+        return "Nyugatra";
     }
 
 }
