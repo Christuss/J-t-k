@@ -5,7 +5,7 @@ public class Bal extends Helyszin{
 
     @Override
     public Helyszin egyikIrany() {
-        throw new UnsupportedOperationException("nincs");
+        return new Del();
     }
 
     @Override
@@ -15,7 +15,7 @@ public class Bal extends Helyszin{
 
     @Override
     public String egyikBtnFelirat() {
-        return "egyik";
+        return "Délre";
     }
 
 }

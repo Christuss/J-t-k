@@ -8,21 +8,21 @@ package jatek;
  *
  * @author szendefi.k.daniel
  */
-public class Kezdes extends Helyszin implements MasikIrany{
-
-    @Override
-    public String leiras() {
-        return "Jobbra, vagy balra?";
-    }
-    
-    @Override
-    public Helyszin egyikIrany() {
-        return new Jobbra();
-    }
+public class Del extends Helyszin{
 
     @Override
     public String egyikBtnFelirat() {
-        return "menj jobbra";
+        return "Kezdés";
     }
 
+    @Override
+    public String leiras() {
+        return "Ez dél.";
+    }
+
+    @Override
+    public Helyszin egyikIrany() {
+        return new Kezdes();
+    }
+    
 }

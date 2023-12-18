@@ -78,8 +78,12 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jButton1.setVisible(true);
         helyszin = helyszin.egyikIrany();
+        if (helyszin instanceof MasikIrany) {
+            jButton1.setVisible(true);
+        } else {
+            jButton1.setVisible(false);
+        }
         jButton2.setText(helyszin.egyikBtnFelirat());
         jTextArea1.insert(helyszin.leiras() + "\n", 0);
         jTextArea1.setCaretPosition(0);
