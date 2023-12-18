@@ -8,9 +8,11 @@ package jatek;
  *
  * @author szendefi.k.daniel
  */
-public class Start extends Helyszin{
+public class Kezdes extends Helyszin{
+
     @Override
     public String leiras() {
-        return "Ez a start";
+        return "Ez a kezdés";
     }
+
 }
